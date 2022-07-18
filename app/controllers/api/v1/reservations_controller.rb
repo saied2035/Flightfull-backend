@@ -22,6 +22,15 @@ class Api::V1::ReservationsController < ApplicationController
         end
 	end
 
+    def destroy
+       item = Item.find(params[:id])
+       if item.destroy
+       	render json: {success: "You canceled reservation for #{item.name}."}.to_json
+       else
+       	render json: {failure: "Something went wrong. Please, try again."}.to_json
+       end	
+    end
+
 	private
 	def reservation_params
 		params.require(:reservation).permit(:city,:date,:user_id,:item_id)
