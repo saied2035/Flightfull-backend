@@ -23,8 +23,9 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    reservation = Reservation.find(params[:id])
-    if reservation.destroy
+    reservation = Reservation.find_by(id: params[:id])
+    if reservation
+      reservation.destroy
       render json: { success: 'You canceled the reservation successfully.' }.to_json
     else
       render json: { failure: 'Something went wrong. Please, try again.' }.to_json
