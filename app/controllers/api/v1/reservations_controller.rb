@@ -1,6 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
 	def index
-		  current_user = User.find_by(id:1) # This is just test because devise gem hasn't been installed yet.
+		  current_user = User.find_by(id:2) # This is just test because devise gem hasn't been installed yet.
 		  @user = current_user 
 		  if @user.present?
 		  @reservations = @user.reserved_items.joins(:reservations).select(:id,:name,:flight_number,
@@ -23,9 +23,9 @@ class Api::V1::ReservationsController < ApplicationController
 	end
 
     def destroy
-       item = Item.find(params[:id])
-       if item.destroy
-       	render json: {success: "You canceled reservation for #{item.name}."}.to_json
+       reservation = Reservation.find(params[:id])
+       if reservation.destroy
+       	render json: {success: "You canceled the reservation successfully."}.to_json
        else
        	render json: {failure: "Something went wrong. Please, try again."}.to_json
        end	
