@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @payload = {
-      error: "An error occurred while creating the user",
+      error: 'An error occurred while creating the user',
       status: 400
     }
 
