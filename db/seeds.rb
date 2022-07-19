@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.create(name:'Saied')
+User.create(name:'Lynlyn')
+Item.create(name:'Flight 1',flight_number:250,image:'Image for flight 1',price:300,user:User.find(1))
