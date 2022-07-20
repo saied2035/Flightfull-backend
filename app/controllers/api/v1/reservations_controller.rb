@@ -6,7 +6,7 @@ class Api::V1::ReservationsController < ApplicationController
                                                                        'reservations.city', 'reservations.date')
       render json: { reservations: @reservations }.to_json
     else
-      render json: { Error: 'Devise gem hasn\'t been set up yet.' }
+      render json: { Error: 'User isn\'t exist' }
     end
   end
 
