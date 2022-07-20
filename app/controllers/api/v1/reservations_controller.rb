@@ -1,6 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    current_user = User.find_by(id: 2) # This is just test because devise gem hasn't been installed yet.
     @user = current_user
     if @user.present?
       @reservations = @user.reserved_items.joins(:reservations).select(:id, :name, :flight_number, :image, :price,
