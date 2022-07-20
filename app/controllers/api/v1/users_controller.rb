@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    @user = User.find_by(params[:id])
+    @user = User.find_by(name:params[:name])
     render json: @user, status: :ok
   end
 
