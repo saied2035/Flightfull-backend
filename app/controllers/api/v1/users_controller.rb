@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    @users = User.all
-    render json: @users, status: :ok
+    @user = User.find_by(name: params[:name])
+    render json: @user, status: :ok
   end
 
   def create
@@ -22,6 +22,6 @@ class Api::V1::UsersController < ApplicationController
 
   # params might chenge in the feature
   def user_params
-    params.permit(:id, :name, :email, :password)
+    params.require(:user).permit(:id, :name, :email, :password)
   end
 end
