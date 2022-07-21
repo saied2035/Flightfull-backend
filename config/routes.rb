@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       namespace :v1, defaults: { format: 'json' } do
         resources :reservations, only: [:index, :create, :destroy]
         resources :users, only: [:index, :create]
+        resources :items, only: [:index, :create, :update, :destroy]
     end
   end
   # Defines the root path route ("/")
