@@ -4,6 +4,12 @@ class Api::V1::ItemsController < ApplicationController
     render json: @items, status: :ok
   end
 
+  def new
+    @user = current_user
+    @items = user.items
+    render json @user, status: :ok
+  end
+
   def create
     @item = Item.new(item_params)
     @payload = {
