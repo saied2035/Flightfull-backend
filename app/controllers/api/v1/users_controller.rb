@@ -2,33 +2,33 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     render json: user
-end
+  end
 
-def create
+  def create
     user = User.create(user_params)
     if user.valid?
-        user = user
-        token = JWT.encode({user_id: user.id}, secret, 'HS256')
-        render json: {user: user, token: token}
+      user = user
+      token = JWT.encode({ user_id: user.id }, secret, 'HS256')
+      render json: { user: user, token: token }
     else
-        render json: {errors: user.errors.full_messages}
+      render json: { errors: user.errors.full_messages }
     end
-end
+  end
 
-def update
+  def update
     user = User.find(params[:id])
     user.update(user_params)
     render json: user
-end
+  end
 
-def destroy
+  def destroy
     user = User.find(params[:id])
     user.destroy
-end
+  end
 
-private
+  private
 
-def user_params
+  def user_params
     params.permit(:name, :password)
-end
+  end
 end
