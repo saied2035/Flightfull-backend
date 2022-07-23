@@ -1,27 +1,33 @@
 class Api::V1::UsersController < ApplicationController
-  def index
-    @user = User.find_by(name: params[:name])
-    render json: @user, status: :ok
+  def show
+    user = User.find(params[:id])
+    render json: user
   end
 
   def create
-    @user = User.new(user_params)
-    @payload = {
-      error: 'An error occurred while creating the user',
-      status: 400
-    }
-
-    if @user.save
-      render json: @user, status: :created
+    user = User.new(user_params)
+    if user.save
+      token = JWT.encode({ user_id: user.id }, secret, 'HS256')
+      render json: { user: user, token: token }
     else
-      render json: @payload, status: :bad_request
+      render json: { errors: user.errors.full_messages }
     end
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    render json: user
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
   end
 
   private
 
-  # params might chenge in the feature
   def user_params
-    params.require(:user).permit(:id, :name, :email, :password)
+    params.require(:user).permit(:name)
   end
 end
