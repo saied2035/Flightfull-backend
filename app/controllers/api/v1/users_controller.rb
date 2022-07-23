@@ -5,9 +5,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    if user.valid?
-      # user = user
+    user = User.new(user_params)
+    if user.save
       token = JWT.encode({ user_id: user.id }, secret, 'HS256')
       render json: { user: user, token: token }
     else
@@ -29,6 +28,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :password)
+    params.require(:user).permit(:name)
   end
 end

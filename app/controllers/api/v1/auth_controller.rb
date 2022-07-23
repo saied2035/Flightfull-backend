@@ -1,4 +1,4 @@
-class AuthController < ApplicationController
+class Api::V1::AuthController < ApplicationController
   def login
     user = User.find_by(name: login_params[:name])
     if user
@@ -22,6 +22,6 @@ class AuthController < ApplicationController
   private
 
   def login_params
-    params.permit(:name, :password)
+    params.require(:auth).permit(:name)
   end
 end
