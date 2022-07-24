@@ -4,5 +4,5 @@ class User < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :reserved_items, through: :reservations, source: :item
 
-  validates :name, uniqueness: true
+  validates :name, presence:true, uniqueness: {case_sensitive: false}
 end
