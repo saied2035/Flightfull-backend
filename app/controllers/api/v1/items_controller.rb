@@ -7,10 +7,11 @@ class Api::V1::ItemsController < ApplicationController
   def new
     @user = current_user
     @items = user.items
-    render json @user, status: :ok
+    render json @items, status: :ok
   end
 
   def create
+    puts "params: #{params}"
     @item = Item.new(item_params)
     @payload = {
       error: 'An error occurred while creating the item',
