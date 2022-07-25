@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       namespace :v1, defaults: { format: 'json' } do
         post 'login', to: 'auth#login'
         get 'auth', to: 'auth#persist'
+        resources :users do
         resources :reservations, only: [:index, :create, :destroy]
-        resources :users
+        end
         resources :items, only: [:index, :create, :update, :destroy]
     end
   end
