@@ -8,9 +8,9 @@ describe 'api/v1/users' do
         parameter name: :user, in: :body, schema: {
           type: :object,
           properties: {
-            name: { type: :string },
+            name: { type: :string }
           },
-          required: [ 'name' ]
+          required: ['name']
         }
         after do |example|
           example.metadata[:response][:content] = {
@@ -29,9 +29,9 @@ describe 'api/v1/users' do
         parameter name: :user, in: :body, schema: {
           type: :object,
           properties: {
-            name: { type: :string },
+            name: { type: :string }
           },
-          required: [ 'name' ]
+          required: ['name']
         }
         after do |example|
           example.metadata[:response][:content] = {
