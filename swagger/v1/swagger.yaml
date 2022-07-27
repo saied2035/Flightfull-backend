@@ -1,0 +1,174 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/login":
+    post:
+      summary: create authentication
+      responses:
+        '200':
+          description: successful
+  "/api/v1/auth":
+    get:
+      summary: token_validation authentication
+      responses:
+        '200':
+          description: successful
+  "/api/v1/items":
+    get:
+      summary: list items
+      tags:
+      - Items
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create Item
+      tags:
+      - Items
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                flight_number:
+                  type: integer
+                price:
+                  type: integer
+                image:
+                  type: string
+                user_id:
+                  type: integer
+              required:
+              - name
+              - flight_number
+              - price
+              - image
+              - user_id
+  "/api/v1/items/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete item
+      tags:
+      - Items
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: timestamp
+                  required: true
+                city:
+                  type: string
+                user_id:
+                  type: integer
+                item_id:
+                  type: integer
+              required:
+              - date
+              - city
+              - user_id
+              - item_id
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      summary: list users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
