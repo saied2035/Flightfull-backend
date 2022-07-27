@@ -6,8 +6,8 @@ class Api::V1::ItemsController < ApplicationController
 
   def new
     @user = current_user
-    @items = user.items
-    render json @items, status: :ok
+    @items = @user.items
+    render json: @items, status: :ok
   end
 
   def create
@@ -47,7 +47,7 @@ class Api::V1::ItemsController < ApplicationController
     }
 
     if @item.destroy
-      render json: @item, status: :ok
+      render json: { item: @item, user: @item.user }, status: :ok
     else
       render json: @payload, status: :bad_request
     end
