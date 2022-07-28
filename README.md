@@ -12,10 +12,31 @@ If you would like to clone and view it on your side then try `http://localhost:3
 - Ruby on Rails
 - PostgreSQL
 
-## Front end Repository
+## Frontend Repository Link
+<a href="https://github.com/ZahraArshia/book-flight-frontend">Book A Flight Frontend</a>
 
-[Pull Requests](https://github.com/ZahraArshia/book-flight-frontend/pulls)
-[Kanban Board](https://github.com/ZahraArshia/book-flight-frontend/projects/1)
+</div>
+
+## Kanban Board
+
+### Current state
+
+[Link to the Kanban Board](https://github.com/ZahraArshia/book-flight-backend/projects/1)
+
+### Initial State
+
+![image](https://user-images.githubusercontent.com/78906545/181631910-64f3f1b6-5836-4099-907f-a2f244ca581d.png)
+
+<br>
+<br>
+
+- This final group capstone was completed by a team of 4 members <br>
+        1.       Zahra Arshia <br>
+        2.       Saied Gaffer <br>
+        3.       Emmanuel Jolugbo <br>
+        4.       Furkan Denizhan <br>
+        
+ <br>
 
 ## Getting Started
 
