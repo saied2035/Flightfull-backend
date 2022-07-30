@@ -7,7 +7,7 @@ If you need further information about the endpoints you can view the documentati
 If you would like to clone and view it on your side then try `http://localhost:3000/api-docs`.
 
 ## Demo
-[Live Demo](https://intense-savannah-72561.herokuapp.com/)
+[Live Demo](https://intense-savannah-72561.herokuapp.com/api-docs/index.html)
 
 ## Built With
 
