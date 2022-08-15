@@ -11,7 +11,6 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    puts "params: #{params}"
     @item = Item.new(item_params)
     @payload = {
       error: 'An error occurred while creating the item',
