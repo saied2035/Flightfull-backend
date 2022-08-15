@@ -52,7 +52,7 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem 'rack-cors'
-group :development, :test do
+group :development,:production, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'rswag-specs'
