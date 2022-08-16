@@ -6,7 +6,7 @@
 
 ## Built With
 - Rails
-- Postgres
+- PostgreSQL
 
 ## Frontend Repository
 [flightfull-frontend](https://github.com/saied2035/Flightfull-frontend)
