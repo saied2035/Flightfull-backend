@@ -1,106 +1,74 @@
-## BOOK-FLIGHT-BACKEND
-> BOOK-FLIGHT-BACKEND is a RESTful API that allows users to book a flight.
+## Flightfull
+> Flightfull to is a flight reservations website that use REST API( check this [repo](https://github.com/saied2035/Flightfull-frontend). Users can manage their own flights and reserve others' flights.
 
-## API Manipulation and Endpoints
+![screenshot-flightfull](https://user-images.githubusercontent.com/70805060/184867505-8e088118-6984-488b-a2b1-a2d064a7ddaf.png)
 
-If you need further information about the endpoints you can view the documentation navigating to /api-docs.
-If you would like to clone and view it on your side then try `http://localhost:3000/api-docs`.
-
-## Demo
-[Live Demo](https://intense-savannah-72561.herokuapp.com/api-docs/index.html)
 
 ## Built With
+- Rails
+- Postgres
 
-- Ruby
-- Ruby on Rails
-- PostgreSQL
+## Frontend Repository
+[flightfull-frontend](https://github.com/saied2035/Flightfull-frontend)
 
-## Frontend Repository Link
-<a href="https://github.com/ZahraArshia/book-flight-frontend">Book A Flight Frontend</a>
 
-</div>
 
-## Kanban Board
-
-### Current state
-
-[Link to the Kanban Board](https://github.com/ZahraArshia/book-flight-backend/projects/1)
-
-### Initial State
-
-![image](https://user-images.githubusercontent.com/78906545/181631910-64f3f1b6-5836-4099-907f-a2f244ca581d.png)
-
-<br>
-<br>
-
-- This final group capstone was completed by a team of 4 members <br>
-        1.       Zahra Arshia <br>
-        2.       Saied Gaffer <br>
-        3.       Emmanuel Jolugbo <br>
-        4.       Furkan Denizhan <br>
-        
- <br>
 
 ## Getting Started
 
-- [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine 
-- [Install Ruby on Rails](https://guides.rubyonrails.org/v5.1/getting_started.html)
-- Clone [this repository](https://github.com/ZahraArshia/book-flight-backend)
+- Clone [this repository](https://github.com/saied2035/Flightfull-backend)
   ```
-  git clone git@github.com:ZahraArshia/book-flight-backend.git
+  git clone git@github.com:saied2035/Flightfull-backend.git
   ```
+
+- Navigate to the created folder.
+
+  ```
+  cd Flightfull-backend
+  ```
+
 - To get started, In the root directory run:
-  ```
-  gem install bundler
-  ```
-  Then run:
+
   ```
   bundle install
   ```
-  To start the server run: 
-
+  ```
+  rails db:create db:migrate
+  ```
+- To start the server run: 
   ```
   rails s
   ```
-  Open the browser with `localhost:3000`
+  Open the browser with 
+  ```
+  localhost:3000
+  ``` 
 
-  
-## After installing bundle
-
-Please run the following commands `rails db:create` `rails db:migrate` `rails s`
-
-## Tests
-```
-bundle exec rspec
-```
-Or
-```
-rspec spec
-```
-### To track linter errors locally follow these steps:  
-
-Track linter errors run:
-```
-rubocop
-```
+## Test API end-points:
+- Check the [API documentation](https://intense-savannah-72561.herokuapp.com/api-docs/index.html).
 
 ## Authors
 
+:man: **Saied Gaffer**
+
+- GitHub: [saied2035](https://github.com/saied2035)
+- LinkedIn: [saiedgaffer](https://www.linkedin.com/in/saiedgaffer/)
+- Twitter: [@SaiedGaffer](https://twitter.com/SaiedGaffer)
+
 :woman: **Zahra Arshia**
 
-- [GitHub](https://github.com/ZahraArshia)
-- [LinkedIn](https://www.linkedin.com/in/zahra-arshia-89247210a/)
-
-:man: **Saied Gaffer**
-- [GitHub](https://github.com/saied2035)
-- [LinkedIn](https://www.linkedin.com/in/saiedgaffer/)
+- GitHub: [GitHub](https://github.com/ZahraArshia)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/zahra-arshia-89247210a/)
 
 :man: **Furkan Denizhan**
-- [GitHub](https://github.com/nevisende)
-- [LinkedIn](https://www.linkedin.com/in/furkan-denizhan/)
+
+- GitHub: [GitHub](https://github.com/nevisende)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/furkan-denizhan/)
 
 :man: **Emmanuel Jolugbo**
-- [GitHub](https://github.com/Thermiee)
+
+- GitHub: [GitHub](https://github.com/Thermiee)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emmanuel-jolugbo/)
 
 ## 🤝 Contributing
 
@@ -114,8 +82,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Thanks to our reviewers and coding partners.
+- Microverse: [microverse community](https://github.com/microverseinc)
+- Original Design by : [Murat Korkmaz](https://www.behance.net/muratk)
+- I followed this [code](https://github.com/racky7/image-background-remover/blob/58703418fa7a22f00ce8f53758f32dc8a2f2f716/index.js#L37-L43) to remove images' backgounds
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](MIT.md) licensed.
