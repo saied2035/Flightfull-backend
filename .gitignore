@@ -8,7 +8,7 @@ node_modules/
 
 # Ignore bundler config.
 /.bundle
-
+/.env
 # Ignore VSCode folders
 .vscode
 .history
