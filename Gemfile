@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby "3.1.2"
+ruby "3.1.2"
 gem 'ffi'
 gem 'jwt'
 
@@ -45,7 +45,6 @@ gem 'tzinfo-data'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: book_flight_backend_production
   username: book_flight_backend
   password: <%= ENV["BOOK_FLIGHT_BACKEND_DATABASE_PASSWORD"] %>
